@@ -1,0 +1,63 @@
+# L'Adressage IP 
+
+* **Présenté par :** Yousra Akajou
+* **Encadré par:**  M.Fouad Essarraj 
+* **Date :** 24 Avril 2026
+* **Projet :** Réseaux et Déploiement Web
+---
+
+# C'est quoi une Adresse IP ?
+### Définition
+C’est l’**adresse postale numérique** de chaque appareil sur un réseau.
+
+* **Rôle :** Identification unique et acheminement des paquets de données.
+* **Format IPv4 :** 4 nombres (octets) séparés par des points.
+* **Exemple :** `192.168.1.1`
+
+---
+
+# Structure de l'Adresse
+### Réseau vs Hôte
+L'adresse IP est toujours divisée en deux parties logiques :
+
+1.  **Network ID (Réseau) :** Identifie l’appartenance à un groupe spécifique (Ex: La rue).
+2.  **Host ID (Hôte) :** Identifie l’appareil précis dans ce groupe (Ex: Le numéro de porte).
+
+
+---
+
+# Le Masque de Sous-Réseau
+### Le "Filtre" du Réseau
+Le **Subnet Mask** définit la limite entre la partie Réseau et la partie Hôte.
+
+* **255 :** Indique que l'octet appartient au **Réseau**.
+* **0 :** Indique que l'octet est disponible pour les **Hôtes**.
+
+**Exemple Classique (Classe C) :**
+* **IP :** `192.168.1.10`
+* **Masque :** `255.255.255.0`
+* *Résultat :* `192.168.1` est le réseau, `.10` est le PC.
+
+---
+
+# Les Classes d'Adresses IP
+### Organisation par taille de réseau
+
+| Classe | Usage | Masque par défaut |
+| :--- | :--- | :--- |
+| **Classe A** | Très grands réseaux | `255.0.0.0` |
+| **Classe B** | Entreprises moyennes | `255.255.0.0` |
+| **Classe C** | **LAN / Domestique** | `255.255.255.0` |
+
+> **Note :** En LAN, nous utilisons majoritairement la **Classe C** (Plage `192.168.x.x`).
+
+---
+
+# Diagnostic et Pratique
+### Vérifier sa configuration
+Pour s'assurer que l'adressage est correct, on utilise l'invité de commande (CMD) :
+
+1.  `ipconfig` : Affiche l'adresse IP et le masque de votre machine.
+2.  `ping [IP_destination]` : Teste la communication avec un autre équipement.
+
+---
